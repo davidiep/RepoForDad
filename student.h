@@ -10,5 +10,23 @@
 
 #include "date.h"
 
+class Student : public Person {
+private:
+    string _major;
+    size_t _credits;
+    float _gpa;
+public:
+    Student();
+    Student(const string& name, const Date& birthday);
+    Student(const string& name, const Date& birthday, const string& major);
+    ~Student();
+    string ToString()const override;
+    void Read(istream& input) ;
+    void Write(ostream& output)const;
+    void AddGrade(float grade, size_t credits);
+    float GetGPA()const;
+    size_t GetCredits()const;
+
+};
 
 #endif
